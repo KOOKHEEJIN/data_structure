@@ -1,4 +1,4 @@
-/*ÁßÀ§¼øÈ¸ ½º·¹µå ÀÌÁøÆ®¸®*/
+/*ì¤‘ìœ„ìˆœíšŒ ìŠ¤ë ˆë“œ ì´ì§„íŠ¸ë¦¬*/
 
 #define TRUE 1
 #define FALSE 0
