@@ -60,7 +60,7 @@ int main(void) {
 	preorder(root);
 	
 	//add
-	free(root);
+	//free(root); 
 
 	return 0;
 }
