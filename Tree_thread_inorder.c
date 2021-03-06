@@ -64,7 +64,7 @@ int main(void) {
 	thread_inorder(root);
 	
 	//add
-	free(root);
+	//free(root);
 	
 	return 0;
 }
