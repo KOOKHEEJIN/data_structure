@@ -1,4 +1,4 @@
-/*ÀüÀ§¼øÈ¸ ½º·¹µå ÀÌÁøÆ®¸®, ¹Ì¿Ï*/
+/*ì „ìœ„ìˆœíšŒ ìŠ¤ë ˆë“œ ì´ì§„íŠ¸ë¦¬, ë¯¸ì™„*/
 
 #define TRUE 1
 #include <stdio.h>
@@ -58,6 +58,9 @@ int main(void) {
 	n27.right = &n12;
 
 	preorder(root);
+	
+	//add
+	free(root);
 
 	return 0;
 }
