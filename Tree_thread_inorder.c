@@ -62,6 +62,9 @@ int main(void) {
 	n9.right = &n10;
 
 	thread_inorder(root);
-
+	
+	//add
+	free(root);
+	
 	return 0;
 }
