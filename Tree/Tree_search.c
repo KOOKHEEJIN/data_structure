@@ -1,4 +1,4 @@
-/*ÀÌÁøÅ½»öÆ®¸® »ðÀÔ, »èÁ¦, Å½»ö*/
+/*ì´ì§„íƒìƒ‰íŠ¸ë¦¬ ì‚½ìž…, ì‚­ì œ, íƒìƒ‰*/
 
 #include <stdio.h>
 #include <stdbool.h>
@@ -9,7 +9,7 @@ typedef struct TreeNode {
 
 }TreeNode;
 
-//ÃÊ±âÈ­
+//ì´ˆê¸°í™”
 TreeNode* init(int key) {
 	TreeNode* p = (TreeNode*)malloc(sizeof(TreeNode));
 	p->key = key;
@@ -96,7 +96,7 @@ TreeNode* remove_node(TreeNode* root, int key) {
 	return root;
 }
 
-//ÁßÀ§¼øÈ¸·Î Ãâ·Â
+//ì¤‘ìœ„ìˆœíšŒë¡œ ì¶œë ¥
 void print_tree_inorder(TreeNode* root) {
 	if (root) {
 		print_tree_inorder(root->left);
@@ -123,7 +123,7 @@ int main(void) {
 	printf("\n");
 	
 	search_node = search(root, 24);
-	if (!search_node)printf("¾ø´Â µ¥ÀÌÅÍÀÔ´Ï´Ù.\n");
+	if (!search_node)printf("ì—†ëŠ” ë°ì´í„°ìž…ë‹ˆë‹¤.\n");
 	else printf("[%d] ", search_node->key);
 	printf("\n");
 	
