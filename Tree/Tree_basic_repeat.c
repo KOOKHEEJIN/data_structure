@@ -1,4 +1,4 @@
-/*ÀÌÁøÆ®¸® ¼øÈ¸ ¹Ýº¹¹®-½ºÅÃÀ» ÀÌ¿ëÇÏ¿© ÇÒ ¼ö ÀÖ´Ù.*/
+/*ì´ì§„íŠ¸ë¦¬ ìˆœíšŒ ë°˜ë³µë¬¸-ìŠ¤íƒì„ ì´ìš©í•˜ì—¬ í•  ìˆ˜ ìžˆë‹¤.*/
 
 #include <stdio.h>
 #include <stdbool.h>
@@ -9,7 +9,7 @@ typedef struct {
 	struct TreeNode* right;
 }TreeNode;
 
-//½ºÅÃ
+//ìŠ¤íƒ
 typedef struct StackNode{
 	struct TreeNode** node;
 	struct StackNode* link;
@@ -33,7 +33,7 @@ TreeNode* pop(StackNode** top) {
 	return p;
 }
 
-//ÁßÀ§ ¼øÈ¸
+//ì¤‘ìœ„ ìˆœíšŒ
 void inorder(StackNode** top, TreeNode* root) {
 	while (true) {
 		for (; root != NULL; root = root->left) {
@@ -46,7 +46,7 @@ void inorder(StackNode** top, TreeNode* root) {
 	}
 }
 
-//ÀüÀ§ ¼øÈ¸
+//ì „ìœ„ ìˆœíšŒ
 void preorder(StackNode** top, TreeNode* root) {
 	while (true) {
 		for (; root != NULL; root = root->left) {
@@ -59,7 +59,7 @@ void preorder(StackNode** top, TreeNode* root) {
 	}
 }
 
-/*ÈÄÀ§¼øÈ¸ ¹Ýº¹¹ý ¸ð¸£°ÚÀ½, ³ªÁß¿¡*/
+/*í›„ìœ„ìˆœíšŒ ë°˜ë³µë²• ëª¨ë¥´ê² ìŒ, ë‚˜ì¤‘ì—*/
 void postorder(StackNode** top, TreeNode* root) {
 	if (root) {
 		postorder(top, root->left);
