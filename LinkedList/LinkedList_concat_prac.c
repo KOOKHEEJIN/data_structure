@@ -1,4 +1,4 @@
-/*2°³ÀÇ ¸®½ºÆ® º´ÇÕ*/
+/*2ê°œì˜ ë¦¬ìŠ¤íŠ¸ ë³‘í•©*/
 #include <stdio.h>
 #include <string.h>
 #include <stdbool.h>
@@ -35,7 +35,7 @@ LinkedList* insert(LinkedList* head, element number) {
 LinkedList* concat_node(LinkedList* head1, LinkedList* head2) {
 	for (LinkedList* tmp = head1; tmp != NULL; tmp = tmp->link) {
 		if (tmp->link == NULL) {
-			tmp->link = head2;	//list1ÀÇ ¸Ç µÚ ³ëµå¿Í list2ÀÇ ¸Ç ¾Õ ³ëµå ¿¬°á
+			tmp->link = head2;	//list1ì˜ ë§¨ ë’¤ ë…¸ë“œì™€ list2ì˜ ë§¨ ì• ë…¸ë“œ ì—°ê²°
 			break;
 		}
 	}
@@ -55,13 +55,13 @@ int main(void) {
 	LinkedList* head2 = NULL;
 	element input1, input2;
 	for (int i = 0; i < 5; i++) {
-		printf("List1ÀÇ data ÀÔ·Â: ");
+		printf("List1ì˜ data ì…ë ¥: ");
 		scanf_s("%d", &input1);
 		head1 = insert(head1, input1);
 	}
 	printf("===============================\n");
 	for (int i = 0; i < 5; i++) {
-		printf("List2ÀÇ data ÀÔ·Â: ");
+		printf("List2ì˜ data ì…ë ¥: ");
 		scanf_s("%d", &input2);
 		head2 = insert(head2, input2);
 	}
