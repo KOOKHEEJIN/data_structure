@@ -1,4 +1,4 @@
-/*╢э╪Ь©╛╟А╦╝╫╨ф╝-╦╝╫╨ф╝ 2╟Ё ╨╢гу ╧в ©ю╦╖бВ╪Ь а╓╥д*/
+/*К▀╗Л┬°Л≈╟Й╡╟К╕╛Л┼╓М┼╦-К╕╛Л┼╓М┼╦ 2Й╟° КЁ▒М∙╘ К╟▐ Л≤╓К╕└Л╟╗Л┬° Л═∙К═╛*/
 
 #include <stdio.h>
 #include <stdbool.h>
@@ -11,7 +11,7 @@ typedef struct {
 	struct LinkedList* link;
 }LinkedList;
 
-//╬у ЁК╣Е цё╠Б
+//Л∙· К┘╦К⌠° Л╟╬Й╦╟
 LinkedList* find_pre(LinkedList* head, LinkedList* node) {
 	LinkedList* pre = head;
 	while (true) {
@@ -23,11 +23,11 @@ LinkedList* find_pre(LinkedList* head, LinkedList* node) {
 	return pre;
 }
 
-//╩Пют
+//Л┌╫Л·┘
 LinkedList* insert(LinkedList* head, element number) {
 	LinkedList* p = (LinkedList*)malloc(sizeof(LinkedList));
 	if (!p) {
-		printf("╦ч╦П╦╝ ╟Ь╟ёюл ╨на╥гу╢о╢ы.\n");
+		printf("К╘■К╙╗К╕╛ ЙЁ╣Й╟└Л²╢ К╤─Л║╠М∙╘К▀┬К▀╓.\n");
 		exit(1);
 	}
 	p->data = number;
@@ -65,7 +65,7 @@ LinkedList* insert(LinkedList* head, element number) {
 	return head;
 }
 
-//©╛╟А╦╝╫╨ф╝ ЁК╣Е╦╕ ©ю╦╖бВ╪Ью╦╥н ╨╢гу
+//Л≈╟Й╡╟К╕╛Л┼╓М┼╦ К┘╦К⌠°К╔╪ Л≤╓К╕└Л╟╗Л┬°Л°╪К║° КЁ▒М∙╘
 LinkedList* list_concat(LinkedList* head1, LinkedList* head2) {
 	LinkedList* tmp2 = head2;
 	for (LinkedList* tmp1 = head1; tmp1 != NULL; tmp1 = tmp1->link) {
@@ -120,7 +120,7 @@ int main(void) {
 	
 	printf("=======List1=======\n");
 	for (int i = 0; i < 5; i++) {
-		printf("╣╔юлем ют╥б: ");
+		printf("К█╟Л²╢М└╟ Л·┘К═╔: ");
 		input1 = rand() % 100;
 		printf("%d\n", input1);
 		head1 = insert(head1, input1);
@@ -128,7 +128,7 @@ int main(void) {
 	print_list(head1);
 	printf("=======List2=======\n");
 	for (int i = 0; i < 5; i++) {
-		printf("╣╔юлем ют╥б: ");
+		printf("К█╟Л²╢М└╟ Л·┘К═╔: ");
 		input2 = rand() % 100;
 		printf("%d\n", input2);
 		head2 = insert(head2, input2);
