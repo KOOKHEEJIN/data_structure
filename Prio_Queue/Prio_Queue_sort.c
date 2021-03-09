@@ -1,9 +1,9 @@
-/*¿ì¼±¼øÀ§ Å¥ Á¤·Ä*/
+/*ìš°ì„ ìˆœìœ„ í ì •ë ¬*/
 #include <stdio.h>
 #include <stdbool.h>
 #define MAX_SIZE 8
 
-//Èü
+//í™
 typedef struct HeapNode{
 	int heap[MAX_SIZE];
 	int heap_size;
@@ -18,9 +18,9 @@ HeapNode* create() {
 
 //insert
 void insert(HeapNode* h, int key){
-	h->heap_size += 1;	//Èü »çÀÌÁî Áõ°¡
+	h->heap_size += 1;	//í™ ì‚¬ì´ì¦ˆ ì¦ê°€
 	int index = h->heap_size;
-	while (index != 1) {		//index°¡ 1ÀÌ ¾Æ´Ò ¶§,
+	while (index != 1) {		//indexê°€ 1ì´ ì•„ë‹ ë•Œ,
 		if (key <= h->heap[index / 2])break;
 		if (key > h->heap[index / 2]) {
 			h->heap[index] = h->heap[index / 2];
@@ -61,7 +61,7 @@ void print_arry(HeapNode* h) {
 void heap_sort(int* heap[], HeapNode* h) {
 	for (int i = 1; i < MAX_SIZE; i++) {
 		int data = delete(h);
-		heap[MAX_SIZE - i] = data;		//Èü¿¡ »èÁ¦µÈ µ¥ÀÌÅÍ »ğÀÔ
+		heap[MAX_SIZE - i] = data;		//í™ì— ì‚­ì œëœ ë°ì´í„° ì‚½ì…
 	}
 }
 
@@ -69,10 +69,10 @@ int main(void) {
 	HeapNode* heap = create();
 	int input;
 	for (int i = 1; i < MAX_SIZE; i++) {
-		printf("\nÀÔ·Â: ");
+		printf("\nì…ë ¥: ");
 		scanf_s("%d", &input);
 		insert(heap, input);
-		print_arry(heap);	//¾²·¹±â°ª Ãâ·ÂµÊ. 
+		print_arry(heap);	//ì“°ë ˆê¸°ê°’ ì¶œë ¥ë¨. 
 	}
 	printf("\n");
 	heap_sort(heap->heap, heap);
