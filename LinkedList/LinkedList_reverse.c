@@ -1,4 +1,4 @@
-/*´Ü¼ø ¿¬°á¸®½ºÆ® ¿ª¼øÀ¸·Î ¸¸µé±â*/
+/*ë‹¨ìˆœ ì—°ê²°ë¦¬ìŠ¤íŠ¸ ì—­ìˆœìœ¼ë¡œ ë§Œë“¤ê¸°*/
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -16,7 +16,7 @@ typedef struct {
 LinkedList* find_pre(LinkedList* head, LinkedList* node) {
 	LinkedList* pre = head;
 	if (!pre) {
-		printf("¸Þ¸ð¸®°¡ ºÎÁ·ÇÕ´Ï´Ù.\n");
+		printf("ë©”ëª¨ë¦¬ê°€ ë¶€ì¡±í•©ë‹ˆë‹¤.\n");
 		exit(1);
 	}
 	while (true) {
@@ -47,7 +47,7 @@ int not_same(LinkedList* head, int max) {
 LinkedList* insert(LinkedList* head, element number) {
 	LinkedList* p = (LinkedList*)malloc(sizeof(LinkedList));
 	if (!p) {
-		printf("¸Þ¸ð¸®°¡ ºÎÁ·ÇÕ´Ï´Ù!\n");
+		printf("ë©”ëª¨ë¦¬ê°€ ë¶€ì¡±í•©ë‹ˆë‹¤!\n");
 		exit(1);
 	}
 	p->data = number;
