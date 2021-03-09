@@ -1,16 +1,16 @@
-/*¿¬°á¸®½ºÆ® ½ºÅÃ »ç¿ë*/
+/*ì—°ê²°ë¦¬ìŠ¤íŠ¸ ìŠ¤íƒ ì‚¬ìš©*/
 
 #include <stdio.h>
 #include <stdbool.h>
 #include <stdlib.h>
 
-//¿¬°á¸®½ºÆ® ±¸Á¶Ã¼
+//ì—°ê²°ë¦¬ìŠ¤íŠ¸ êµ¬ì¡°ì²´
 typedef struct LinkedList {
-	int data;	//µ¥ÀÌÅÍ
-	struct LinkedList* link;	//¸µÅ©
+	int data;	//ë°ì´í„°
+	struct LinkedList* link;	//ë§í¬
 }LinkedList;
 
-//½ºÅÃ ±¸Á¶Ã¼
+//ìŠ¤íƒ êµ¬ì¡°ì²´
 typedef struct {
 	struct LinkedStackType* top;
 }LinkedStackType;
@@ -20,13 +20,13 @@ LinkedStackType* push(LinkedStackType* top, int data) {
 	LinkedList* p = (LinkedList*)malloc(sizeof(LinkedList));
 	if (!p)exit(1);
 	p->data = data;
-	if (top == NULL) {	//topÆ÷ÀÎÅÍ°¡ °¡¸®Å°´Â °ÍÀÌ ¾Æ¹«°Íµµ ¾ø´Ù¸é,
+	if (top == NULL) {	//topí¬ì¸í„°ê°€ ê°€ë¦¬í‚¤ëŠ” ê²ƒì´ ì•„ë¬´ê²ƒë„ ì—†ë‹¤ë©´,
 		top = p;
 		p->link = NULL;
 		return top;
 	}
-	p->link = top;	//p°¡ °¡¸®Å°´Â topÀÌ °¡¸®Å°´Â °Í
-	top = p;		//topÀº p¸¦ °¡¸®Å´
+	p->link = top;	//pê°€ ê°€ë¦¬í‚¤ëŠ” topì´ ê°€ë¦¬í‚¤ëŠ” ê²ƒ
+	top = p;		//topì€ pë¥¼ ê°€ë¦¬í‚´
 	return top;
 }
 
@@ -58,13 +58,13 @@ int main(void) {
 	LinkedStackType* top = NULL;
 	int input;
 	for (int i = 0; i < 5; i++) {
-		printf("µ¥ÀÌÅÍ: ");
-		scanf_s("%d", &input);		//µ¥ÀÌÅÍ ÀÔ·Â
+		printf("ë°ì´í„°: ");
+		scanf_s("%d", &input);		//ë°ì´í„° ì…ë ¥
 		top=push(top, input);
 		print_list(top);
 	}
 
-	printf("\n¸Ş¸ğ¸®¸¦ ÇØÁ¦ÇÕ´Ï´Ù.\n");
+	printf("\në©”ëª¨ë¦¬ë¥¼ í•´ì œí•©ë‹ˆë‹¤.\n");
 	for (int i = 0; i < 5; i++) {
 		pop(&top);
 		print_list(top);
