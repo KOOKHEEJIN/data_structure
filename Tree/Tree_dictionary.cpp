@@ -1,12 +1,12 @@
-/*Æ®¸®, »çÀü, c++*/
+/*íŠ¸ë¦¬, ì‚¬ì „, c++*/
 #include <iostream>
 #include <string>
 using namespace std;
 
-//³ëµå Å¬·¡½º
+//ë…¸ë“œ í´ë˜ìŠ¤
 class NodeType {
-	string word;	//´Ü¾î
-	string meaning;	//ÀÇ¹Ì
+	string word;	//ë‹¨ì–´
+	string meaning;	//ì˜ë¯¸
 	NodeType* left;
 	NodeType* right;
 public:
@@ -18,7 +18,7 @@ public:
 		delete left;
 		delete right;
 		if (!left && !right) {
-			cout << "¿Ş¿À¾ø¾îÁü";
+			cout << "ì™¼ì˜¤ì—†ì–´ì§";
 		}
 	}
 	string getWord() { return word; }
@@ -29,16 +29,16 @@ public:
 	NodeType* getRight() { return right; }
 };
 
-//Æ®¸® Å¬·¡½º
+//íŠ¸ë¦¬ í´ë˜ìŠ¤
 class TreeType{
 protected:
 	NodeType* root;
 public:
 	virtual ~TreeType() {
-		if (!root)cout << "¾ø¾îÁü";
+		if (!root)cout << "ì—†ì–´ì§";
 	}
-	void insertNode(NodeType** root, NodeType* node);	//»ğÀÔ
-	NodeType* searchWord(NodeType* root, string word);	//Å½»ö
+	void insertNode(NodeType** root, NodeType* node);	//ì‚½ì…
+	NodeType* searchWord(NodeType* root, string word);	//íƒìƒ‰
 	void print_tree_inorder(NodeType* root);			//print
 };
 
@@ -94,17 +94,17 @@ void TreeType::print_tree_inorder(NodeType* root) {
 class Dictionary :public TreeType {
 public:
 	~Dictionary() {
-		cout << "¼Ò¸êÀÚ ½ÇÇà" << endl;
+		cout << "ì†Œë©¸ì ì‹¤í–‰" << endl;
 		delete root;
-		if (root == NULL)cout << "¼Ò¸ê!" << endl;
+		if (root == NULL)cout << "ì†Œë©¸!" << endl;
 	}
 	void Manage() {
 		int input;
-		cout << "´Ü¾îÀå¿¡ ¿Â °ÍÀ» È¯¿µÇÕ´Ï´Ù!" << endl;
-		cout << "¿øÇÏ´Â ÀÛ¾÷ ¹öÆ°À» Å¬¸¯ÇÏ¼¼¿ä." << endl;
-		cout << "[1] ´Ü¾î Ãß°¡" << endl << "[2] ´Ü¾î Å½»ö" << endl << "[3] ¸ğµç ´Ü¾î Ãâ·Â" << endl;
+		cout << "ë‹¨ì–´ì¥ì— ì˜¨ ê²ƒì„ í™˜ì˜í•©ë‹ˆë‹¤!" << endl;
+		cout << "ì›í•˜ëŠ” ì‘ì—… ë²„íŠ¼ì„ í´ë¦­í•˜ì„¸ìš”." << endl;
+		cout << "[1] ë‹¨ì–´ ì¶”ê°€" << endl << "[2] ë‹¨ì–´ íƒìƒ‰" << endl << "[3] ëª¨ë“  ë‹¨ì–´ ì¶œë ¥" << endl;
 		while (true) {
-			cout << "¹øÈ£ ÀÔ·Â: ";
+			cout << "ë²ˆí˜¸ ì…ë ¥: ";
 			cin >> input;
 			if (input == 0)break;
 			switch (input)
@@ -129,19 +129,19 @@ public:
 	void AddData() {
 		string word;
 		string meaning;
-		cout << "´Ü¾î ÀÔ·Â: ";
+		cout << "ë‹¨ì–´ ì…ë ¥: ";
 		cin >> word;
-		cout << "ÀÇ¹Ì ÀÔ·Â: ";
+		cout << "ì˜ë¯¸ ì…ë ¥: ";
 		cin >> meaning;
 		NodeType* node = new NodeType(word, meaning);
 		insertNode(&root, node);
 	}
 	void searchData() {
 		string word;
-		cout << "Å½»öÇÏ·Á´Â ´Ü¾î¸¦ ÀÔ·ÂÇÏ¼¼¿ä: ";
+		cout << "íƒìƒ‰í•˜ë ¤ëŠ” ë‹¨ì–´ë¥¼ ì…ë ¥í•˜ì„¸ìš”: ";
 		cin >> word;
 		if (!searchWord(root, word)) {
-			cout << "¾ø´Â µ¥ÀÌÅÍÀÔ´Ï´Ù." << endl;
+			cout << "ì—†ëŠ” ë°ì´í„°ì…ë‹ˆë‹¤." << endl;
 		}
 		else {
 			cout << searchWord(root, word)->getWord() << ":" << searchWord(root, word)->getMeaning() << endl;
