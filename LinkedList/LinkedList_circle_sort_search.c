@@ -1,4 +1,4 @@
-/*¿¬°á¸®½ºÆ®¿¡ »ğÀÔ ÈÄ ¿À¸§Â÷¼ø Á¤·Ä, Å½»ö*/
+/*ì—°ê²°ë¦¬ìŠ¤íŠ¸ì— ì‚½ì… í›„ ì˜¤ë¦„ì°¨ìˆœ ì •ë ¬, íƒìƒ‰*/
 #include <stdio.h>
 #include <stdbool.h>
 #include <stdlib.h>
@@ -17,11 +17,11 @@ CircleLinkedList* find_pre(CircleLinkedList* head, CircleLinkedList* tmp) {
 	return pre;
 }
 
-//¿À¸§Â÷¼øÀ¸·Î
+//ì˜¤ë¦„ì°¨ìˆœìœ¼ë¡œ
 CircleLinkedList* insert(CircleLinkedList* head, int data) {
 	CircleLinkedList* p = (CircleLinkedList*)malloc(sizeof(CircleLinkedList));
 	if (!p) {
-		printf("¸Ş¸ğ¸® °ø°£ÀÌ ºÎÁ·ÇÕ´Ï´Ù.\n");
+		printf("ë©”ëª¨ë¦¬ ê³µê°„ì´ ë¶€ì¡±í•©ë‹ˆë‹¤.\n");
 		exit(1);
 	}
 	p->data = data;
@@ -73,7 +73,7 @@ CircleLinkedList* insert(CircleLinkedList* head, int data) {
 void print_list(CircleLinkedList* head) {
 	CircleLinkedList* tmp = head->link;
 	if (head == NULL) {
-		printf("¸®½ºÆ®°¡ ºñ¾îÀÖ½À´Ï´Ù.\n");
+		printf("ë¦¬ìŠ¤íŠ¸ê°€ ë¹„ì–´ìˆìŠµë‹ˆë‹¤.\n");
 		return;
 	}
 	while (true) {
@@ -113,22 +113,22 @@ int main(void) {
 	int input;
 	int search_data;
 	for (int i = 0; i < 5; i++) {
-		printf("µ¥ÀÌÅÍ: ");
+		printf("ë°ì´í„°: ");
 		scanf_s("%d", &input);
 		head = insert(head, input);
 		print_list(head);
 	}
 
-	printf("¸®½ºÆ®ÀÇ Å©±â: %d\n", getLength(head));
+	printf("ë¦¬ìŠ¤íŠ¸ì˜ í¬ê¸°: %d\n", getLength(head));
 
-	printf("Å½»ö: ");
+	printf("íƒìƒ‰: ");
 	scanf_s("%d", &search_data);
 	CircleLinkedList* search_node = search(head, search_data);
 	if (search_node != NULL) {
-		printf("Å½»ö °á°ú: %d\n", search_node->data);
+		printf("íƒìƒ‰ ê²°ê³¼: %d\n", search_node->data);
 	}
 	else {
-		printf("¾ø´Â µ¥ÀÌÅÍÀÔ´Ï´Ù.\n");
+		printf("ì—†ëŠ” ë°ì´í„°ì…ë‹ˆë‹¤.\n");
 	}
 
 	free(head);
