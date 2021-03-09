@@ -1,4 +1,4 @@
-/*¿øÇü ¿¬°á¸®½ºÆ® ±âº»*/
+/*ì›í˜• ì—°ê²°ë¦¬ìŠ¤íŠ¸ ê¸°ë³¸*/
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 #include <stdbool.h>
@@ -9,13 +9,13 @@ typedef struct {
 	struct CircleLinkedList* link;
 }CircleLinkedList;
 
-//¿¬°á¸®½ºÆ® ¸Ç ¾Õ¿¡ »ğÀÔÇÏ´Â ÇÔ¼ö
+//ì—°ê²°ë¦¬ìŠ¤íŠ¸ ë§¨ ì•ì— ì‚½ì…í•˜ëŠ” í•¨ìˆ˜
 CircleLinkedList* insert_first(CircleLinkedList* head, int number) {
-	CircleLinkedList* p = (CircleLinkedList*)malloc(sizeof(CircleLinkedList));	//µ¿Àû »ı¼º
-	if (head == NULL) {		//¿¬°á¸®½ºÆ®°¡ ºñ¾îÀÖ´Ù¸é
+	CircleLinkedList* p = (CircleLinkedList*)malloc(sizeof(CircleLinkedList));	//ë™ì  ìƒì„±
+	if (head == NULL) {		//ì—°ê²°ë¦¬ìŠ¤íŠ¸ê°€ ë¹„ì–´ìˆë‹¤ë©´
 		p->data = number;
-		head = p;			//headÆ÷ÀÎÅÍ°¡ °¡¸®Å°´Â °ÍÀº p
-		p->link = p;		//p´Â ÀÚ±â ÀÚ½Å °¡¸®Å´
+		head = p;			//headí¬ì¸í„°ê°€ ê°€ë¦¬í‚¤ëŠ” ê²ƒì€ p
+		p->link = p;		//pëŠ” ìê¸° ìì‹  ê°€ë¦¬í‚´
 	}
 	else {
 		p->data = number;
@@ -26,9 +26,9 @@ CircleLinkedList* insert_first(CircleLinkedList* head, int number) {
 	return head;
 }
 
-//¿¬°á¸®½ºÆ® ¸¶Áö¸·¿¡ »ğÀÔÇÏ´Â ÇÔ¼ö
+//ì—°ê²°ë¦¬ìŠ¤íŠ¸ ë§ˆì§€ë§‰ì— ì‚½ì…í•˜ëŠ” í•¨ìˆ˜
 CircleLinkedList* insert_last(CircleLinkedList* head, int number) {
-	CircleLinkedList* p = (CircleLinkedList*)malloc(sizeof(CircleLinkedList));	//µ¿Àû »ı¼º
+	CircleLinkedList* p = (CircleLinkedList*)malloc(sizeof(CircleLinkedList));	//ë™ì  ìƒì„±
 	p->data = number;
 	if (head == NULL) {
 		head = p;
@@ -45,7 +45,7 @@ CircleLinkedList* insert_last(CircleLinkedList* head, int number) {
 void print_list(CircleLinkedList* head) {
 	CircleLinkedList* tmp = head->link;
 	if (head == NULL) {
-		printf("¸®½ºÆ®°¡ ºñ¾îÀÖ½À´Ï´Ù.\n");
+		printf("ë¦¬ìŠ¤íŠ¸ê°€ ë¹„ì–´ìˆìŠµë‹ˆë‹¤.\n");
 		return;
 	}
 	while (true) {
@@ -63,8 +63,8 @@ int main(void) {
 	CircleLinkedList* head = NULL;
 	int input;
 	for (int i = 0; i < 5; i++) {
-		printf("µ¥ÀÌÅÍ: ");
-		scanf_s("%d", &input);	//µ¥ÀÌÅÍ ÀÔ·Â ¹Ş±â
+		printf("ë°ì´í„°: ");
+		scanf_s("%d", &input);	//ë°ì´í„° ì…ë ¥ ë°›ê¸°
 		head = insert_last(head, input);
 		print_list(head);
 	}
