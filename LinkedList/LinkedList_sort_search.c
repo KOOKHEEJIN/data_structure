@@ -1,7 +1,7 @@
-/*´Ü¼ø ¿¬°á¸®½ºÆ®-³»¸²Â÷¼ø Á¤·Ä, Å½»ö*/
-/*¼ºÀû ÇÁ·Î±×·¥*/
+/*ë‹¨ìˆœ ì—°ê²°ë¦¬ìŠ¤íŠ¸-ë‚´ë¦¼ì°¨ìˆœ ì •ë ¬, íƒìƒ‰*/
+/*ì„±ì  í”„ë¡œê·¸ëž¨*/
 
-#pragma warning(disable:6031)	//scanf»ç¿ë ½Ã ¿À·ù¸Þ½ÃÁö ¾È¶ß°Ô ÇÏ±â À§ÇÑ °Í
+#pragma warning(disable:6031)	//scanfì‚¬ìš© ì‹œ ì˜¤ë¥˜ë©”ì‹œì§€ ì•ˆëœ¨ê²Œ í•˜ê¸° ìœ„í•œ ê²ƒ
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 #include <string.h>
@@ -14,7 +14,7 @@ typedef struct {
 	struct LinkedList* link;
 }LinkedList;
 
-/*ÇöÀç ³ëµåÀÇ ÀÌÀü ³ëµå¸¦ Å½»öÇÏ´Â ÇÔ¼ö*/
+/*í˜„ìž¬ ë…¸ë“œì˜ ì´ì „ ë…¸ë“œë¥¼ íƒìƒ‰í•˜ëŠ” í•¨ìˆ˜*/
 LinkedList* find_pre(LinkedList* head, LinkedList* node) {
 	LinkedList* pre = head;
 	for (pre; pre != NULL; pre = pre->link) {
@@ -25,7 +25,7 @@ LinkedList* find_pre(LinkedList* head, LinkedList* node) {
 	return pre;
 }
 
-/*³»¸²Â÷¼øÀ¸·Î ³ëµå¸¦ »ðÀÔÇÏ´Â ÇÔ¼ö*/
+/*ë‚´ë¦¼ì°¨ìˆœìœ¼ë¡œ ë…¸ë“œë¥¼ ì‚½ìž…í•˜ëŠ” í•¨ìˆ˜*/
 LinkedList* insert(LinkedList* head, element data, int data_num) {
 	LinkedList* p = (LinkedList*)malloc(sizeof(LinkedList));
 	strcpy(p->name, data);
@@ -63,26 +63,26 @@ LinkedList* insert(LinkedList* head, element data, int data_num) {
 	return head;
 }
 
-/*³ëµå¸¦ Å½»öÇÏ´Â ÇÔ¼ö*/
+/*ë…¸ë“œë¥¼ íƒìƒ‰í•˜ëŠ” í•¨ìˆ˜*/
 LinkedList* search(LinkedList* head, element data) {
 	LinkedList* tmp = head;
 	while (true) {
 		if (tmp == NULL) break;					
 
-		if (!strcmp(tmp->name, data)) {   //str1 == str2 ÀÎ °æ¿ì¿¡´Â 0À» ¹ÝÈ¯ ÇÕ´Ï´Ù.
+		if (!strcmp(tmp->name, data)) {   //str1 == str2 ì¸ ê²½ìš°ì—ëŠ” 0ì„ ë°˜í™˜ í•©ë‹ˆë‹¤.
 			break;
 		}
 		tmp = tmp->link;
 	}
-	return tmp;		//Å½»ö ½ÇÆÐ½Ã tmp==NULL, ¼º°ø½Ã tmp==ÇØ´ç ³ëµå
+	return tmp;		//íƒìƒ‰ ì‹¤íŒ¨ì‹œ tmp==NULL, ì„±ê³µì‹œ tmp==í•´ë‹¹ ë…¸ë“œ
 }
 
-/*¿¬°á¸®½ºÆ®ÀÇ ³ëµå¸¦ ¼øÂ÷ÀûÀ¸·Î Ãâ·ÂÇÏ´Â ÇÔ¼ö*/
+/*ì—°ê²°ë¦¬ìŠ¤íŠ¸ì˜ ë…¸ë“œë¥¼ ìˆœì°¨ì ìœ¼ë¡œ ì¶œë ¥í•˜ëŠ” í•¨ìˆ˜*/
 void print_list(LinkedList* head) {
 	int i = 1;
-	printf("==========¼øÀ§ ¹ßÇ¥===========\n");
+	printf("==========ìˆœìœ„ ë°œí‘œ===========\n");
 	for (LinkedList* node = head; node != NULL; node = node->link) {
-		printf("%dµî: %s, %dÁ¡\n", i, node->name, node->number);
+		printf("%dë“±: %s, %dì \n", i, node->name, node->number);
 		i++;
 	}
 }
@@ -95,10 +95,10 @@ int main(void) {
 	int i = 1;
 
 	while (true) {
-		printf("(%d) ÀÌ¸§, Á¡¼ö ÀÔ·Â: ", i);
+		printf("(%d) ì´ë¦„, ì ìˆ˜ ìž…ë ¥: ", i);
 		scanf("%s %d", input_name, &input_num);
 		if (input_num==999) {
-			printf("ÀÔ·ÂÀ» Á¾·áÇÕ´Ï´Ù.\n\n");
+			printf("ìž…ë ¥ì„ ì¢…ë£Œí•©ë‹ˆë‹¤.\n\n");
 			break;
 		}
 		head = insert(head, input_name, input_num);
@@ -107,19 +107,19 @@ int main(void) {
 
 	print_list(head);
 
-	char c = getchar();		//ÀÔ·Â ¹öÆÛ¸¦ ºñ¿öÁÖ±â À§ÇÑ ÄÚµå
-	printf("%c", c);		//ÀÔ·Â ¹öÆÛ¿¡´Â '\n'ÀÌ ³²¾ÆÀÖ¾úÀ½
+	char c = getchar();		//ìž…ë ¥ ë²„í¼ë¥¼ ë¹„ì›Œì£¼ê¸° ìœ„í•œ ì½”ë“œ
+	printf("%c", c);		//ìž…ë ¥ ë²„í¼ì—ëŠ” '\n'ì´ ë‚¨ì•„ìžˆì—ˆìŒ
 
 	
-	printf("ÀÚ·á¸í ÀÔ·Â: ");
+	printf("ìžë£Œëª… ìž…ë ¥: ");
 	scanf("%s", search_name);
 	LinkedList* search_node = search(head, search_name);
 
 	if (search_node != NULL) {
-		printf("ÀÌ¸§: %s, Á¡¼ö: %d\n", search_node->name, search_node->number);
+		printf("ì´ë¦„: %s, ì ìˆ˜: %d\n", search_node->name, search_node->number);
 	}
 	else {
-		printf("Á¸ÀçÇÏÁö ¾Ê´Â µ¥ÀÌÅÍÀÔ´Ï´Ù.\n");
+		printf("ì¡´ìž¬í•˜ì§€ ì•ŠëŠ” ë°ì´í„°ìž…ë‹ˆë‹¤.\n");
 		
 	}
 	
