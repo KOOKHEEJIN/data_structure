@@ -1,4 +1,4 @@
-/*ÇÏ³ªÀÇ ¸®½ºÆ® Â¦/È¦·Î ³ª´©±â*/
+/*í•˜ë‚˜ì˜ ë¦¬ìŠ¤íŠ¸ ì§/í™€ë¡œ ë‚˜ëˆ„ê¸°*/
 #include <stdio.h>
 #include <stdbool.h>
 
@@ -37,7 +37,7 @@ void print_list(LinkedList* head) {
 }
 
 
-//ÀÌÁß Æ÷ÀÎÅÍ Çò°¥¸®Áö¸»ÀÚ
+//ì´ì¤‘ í¬ì¸í„° í—·ê°ˆë¦¬ì§€ë§ì
 void split(LinkedList* head, LinkedList** alist, LinkedList** blist) {
 	LinkedList* tmp = head;
 	while (true) {
@@ -67,9 +67,9 @@ int main(void) {
 	}
 	
 	split(head, &alist, &blist);
-	printf("Â¦¼ö ¸®½ºÆ®: ");
+	printf("ì§ìˆ˜ ë¦¬ìŠ¤íŠ¸: ");
 	print_list(alist);
-	printf("È¦¼ö ¸®½ºÆ®: ");
+	printf("í™€ìˆ˜ ë¦¬ìŠ¤íŠ¸: ");
 	print_list(blist);
 
 	return 0;
