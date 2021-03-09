@@ -1,11 +1,11 @@
-/*¿¬°á¸®½ºÆ®, ¹æÁ¤½Ä*/
+/*ì—°ê²°ë¦¬ìŠ¤íŠ¸, ë°©ì •ì‹*/
 #include <stdio.h>
 #include <stdbool.h>
 #include <stdlib.h>
 
 typedef struct {
-	int coef;		//°è¼ö
-	int expon;		//Â÷¼ö
+	int coef;		//ê³„ìˆ˜
+	int expon;		//ì°¨ìˆ˜
 	struct LinkedList* link;
 }LinkedList;
 
@@ -19,7 +19,7 @@ typedef struct {
 LinkedList* create() {
 	Header* header = (Header*)malloc(sizeof(Header));
 	if (!header) {
-		printf("¸Ş¸ğ¸®°¡ ºÎÁ·ÇÕ´Ï´Ù\n");
+		printf("ë©”ëª¨ë¦¬ê°€ ë¶€ì¡±í•©ë‹ˆë‹¤\n");
 		exit(1);
 	}
 	header->size = 0;
@@ -32,7 +32,7 @@ LinkedList* create() {
 void insert_last(Header* header, int coef, int expon) {
 	LinkedList* p = (LinkedList*)malloc(sizeof(LinkedList));
 	if (p == NULL) {
-		printf("¸Ş¸ğ¸®°¡ ºÎÁ·ÇÕ´Ï´Ù\n");
+		printf("ë©”ëª¨ë¦¬ê°€ ë¶€ì¡±í•©ë‹ˆë‹¤\n");
 		exit(1);
 	}
 	p->coef = coef;
@@ -49,7 +49,7 @@ void insert_last(Header* header, int coef, int expon) {
 	header->size++;
 }
 
-//¹æÁ¤½Ä Ãâ·Â
+//ë°©ì •ì‹ ì¶œë ¥
 void poly_print(Header* header) {
 	LinkedList* tmp = header->head;
 	while(true) {
@@ -64,7 +64,7 @@ void poly_print(Header* header) {
 	}
 }
 
-//¹æÁ¤½Ä µ¡¼À
+//ë°©ì •ì‹ ë§ì…ˆ
 void poly_add(Header* header1, Header* header2, Header* result) {
 	LinkedList* tmp1 = header1->head;
 	LinkedList* tmp2 = header2->head;
