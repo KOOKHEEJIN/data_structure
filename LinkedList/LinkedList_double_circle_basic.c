@@ -1,5 +1,5 @@
-/*¿øÇü ÀÌÁß ¿¬°á¸®½ºÆ® ±âº»
-·çÇÁ È½¼ö¸¦ ÀÔ·Â¹Ş¾Æ ±×¸¸Å­ ¸®½ºÆ® µ¥ÀÌÅÍ Ãâ·Â
+/*ì›í˜• ì´ì¤‘ ì—°ê²°ë¦¬ìŠ¤íŠ¸ ê¸°ë³¸
+ë£¨í”„ íšŸìˆ˜ë¥¼ ì…ë ¥ë°›ì•„ ê·¸ë§Œí¼ ë¦¬ìŠ¤íŠ¸ ë°ì´í„° ì¶œë ¥
 */
 
 #include <stdio.h>
@@ -12,17 +12,17 @@ typedef struct DoubleLinkedList {
 	struct DoubleLinkedList* rlink;
 }DoubleLinkedList;
 
-//ÃÊ±âÈ­
+//ì´ˆê¸°í™”
 DoubleLinkedList* init(DoubleLinkedList* head) {
 	head->llink = head;
 	head->rlink = head;
 	return head;
 }
 
-//Ã³À½¿¡ »ğÀÔ
+//ì²˜ìŒì— ì‚½ì…
 DoubleLinkedList* insert_first(DoubleLinkedList* head, int data) {
 	DoubleLinkedList* p = (DoubleLinkedList*)malloc(sizeof(DoubleLinkedList));
-	DoubleLinkedList* tmp = head;	//ÀÓ½Ã ³ëµå
+	DoubleLinkedList* tmp = head;	//ì„ì‹œ ë…¸ë“œ
 	if (!p) exit(1);
 	p->data = data;
 	if (tmp->rlink == head) {
@@ -45,7 +45,7 @@ DoubleLinkedList* insert_first(DoubleLinkedList* head, int data) {
 	return head;
 }
 
-//¸¶Áö¸·¿¡ »ğÀÔ
+//ë§ˆì§€ë§‰ì— ì‚½ì…
 DoubleLinkedList* insert_last(DoubleLinkedList* head, int data) {
 	DoubleLinkedList* p = (DoubleLinkedList*)malloc(sizeof(DoubleLinkedList));
 	DoubleLinkedList* tmp = head;
@@ -64,7 +64,7 @@ DoubleLinkedList* insert_last(DoubleLinkedList* head, int data) {
 	return head;
 }
 
-//¸®½ºÆ® Ãâ·Â
+//ë¦¬ìŠ¤íŠ¸ ì¶œë ¥
 void print_list(DoubleLinkedList* head) {
 	DoubleLinkedList* tmp = head->rlink;
 	while (true) {
@@ -77,7 +77,7 @@ void print_list(DoubleLinkedList* head) {
 	}
 }
 
-//·çÇÁ
+//ë£¨í”„
 void print_list_cnt(DoubleLinkedList* head, int number) {
 	DoubleLinkedList* tmp = head->rlink;
 	int cnt = 0;
@@ -98,15 +98,15 @@ int main(void) {
 	head = init(head);
 
 	for (int i = 0; i < 5; i++) {
-		printf("µ¥ÀÌÅÍ: ");
+		printf("ë°ì´í„°: ");
 		scanf_s("%d", &input);
 		head = insert_first(head, input);
 		print_list(head);
 	}
 
-	printf("\n¸î¹ø ·çÇÁÇÏ½Ã°Ú½À´Ï±î? ");
-	scanf_s("%d", &input);		//¿øÇü¸®½ºÆ® ·çÇÁ È½¼ö
-	print_list_cnt(head, input);	//·çÇÁÇÏ´Â ¿øÇü¿¬°á¸®½ºÆ® Ãâ·Â
+	printf("\nëª‡ë²ˆ ë£¨í”„í•˜ì‹œê² ìŠµë‹ˆê¹Œ? ");
+	scanf_s("%d", &input);		//ì›í˜•ë¦¬ìŠ¤íŠ¸ ë£¨í”„ íšŸìˆ˜
+	print_list_cnt(head, input);	//ë£¨í”„í•˜ëŠ” ì›í˜•ì—°ê²°ë¦¬ìŠ¤íŠ¸ ì¶œë ¥
 
 	free(head);
 	return 0;
